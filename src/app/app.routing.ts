@@ -1,8 +1,16 @@
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {QuoteComponent} from './quote/quote.component';
 
-
-const app_routes: Routes = [
-  { path: '',  pathMatch:'full', redirectTo: '/someRoute' }
+export const routes: Routes = [
+  {
+    path: '',
+    component: QuoteComponent
+  }
 ];
 
-export const app_routing = RouterModule.forRoot(app_routes);
+@NgModule({
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ]
+})
+export class AppRoutingModule {}

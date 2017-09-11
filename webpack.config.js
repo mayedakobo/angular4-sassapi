@@ -40,7 +40,12 @@ module.exports = {
         loaders: [
             {test: /\.css$/, loader: 'raw-loader'},
             {test: /\.html$/, loader: 'raw-loader'},
-            {test: /\.ts$/, loader: '@ngtools/webpack'}
+            {test: /\.ts$/, loader: '@ngtools/webpack'},
+            {
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                loaders: ['raw-loader', 'sass-loader'] // sass-loader not scss-loader
+            }
         ]
     },
     // devServer: {
